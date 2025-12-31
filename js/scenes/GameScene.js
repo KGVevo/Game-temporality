@@ -19,7 +19,7 @@ export default class GameScene extends Phaser.Scene {
     
     
     preload() {
-        this.load.path = './game/';
+        this.load.setBaseURL(window.location.origin + window.location.pathname);
         
         // Mundo
         this.load.image('mapa_juego', '../assets/mapa_juego.png');
@@ -789,4 +789,5 @@ update() {
 
 
 }
+
 
