@@ -76,7 +76,7 @@ body {
 
 /* Contenedor del juego (para control de tamaño) */
 #game-container {
-    width: 80vw; /* Usa 90% del ancho del viewport */
+    width: 70vw; /* Usa 90% del ancho del viewport */
     max-width: 1200px; /* Límite en desktop */
     /* Mantiene una relación de aspecto 16:9, crucial para juegos */
     aspect-ratio: 16 / 9; 
@@ -91,4 +91,5 @@ canvas {
     display: block;
     width: 100%;
     height: 100%;
+
 }
