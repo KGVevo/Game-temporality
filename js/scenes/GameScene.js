@@ -19,7 +19,6 @@ export default class GameScene extends Phaser.Scene {
     
     
     preload() {
-    preload() {
         // 1. Quitamos el setBaseURL problemático y usamos la ruta del index.html como base
         this.load.setPath('./'); 
 
@@ -794,6 +793,7 @@ update() {
 
 
 }
+
 
 
 
