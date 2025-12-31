@@ -1,0 +1,94 @@
+/* Estilos base: elimina márgenes y centra el contenido */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1f2a37; /* Fondo oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden; 
+}
+
+/* Contenedor principal para centrar UI y Juego */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilos para el UI del Lobby (fuera de Phaser) */
+.lobby-ui {
+    background-color: #37475a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    color: #ecf0f1;
+    width: 90vw;
+    max-width: 400px;
+    border: 1px solid #58697e;
+}
+
+.lobby-ui h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.user-info {
+    font-size: 0.85rem;
+    color: #bdc3c7;
+    margin-bottom: 20px;
+    word-wrap: break-word; /* Importante para IDs largos */
+}
+
+.actions button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 3px #2980b9;
+}
+
+.actions button:hover {
+    background-color: #2980b9;
+}
+
+.actions button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px #2980b9;
+}
+
+.actions button:disabled {
+    background-color: #7f8c8d;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Contenedor del juego (para control de tamaño) */
+#game-container {
+    width: 80vw; /* Usa 90% del ancho del viewport */
+    max-width: 1200px; /* Límite en desktop */
+    /* Mantiene una relación de aspecto 16:9, crucial para juegos */
+    aspect-ratio: 16 / 9; 
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px; /* Separación de la UI */
+}
+
+/* Asegura que el canvas de Phaser ocupe todo el contenedor */
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

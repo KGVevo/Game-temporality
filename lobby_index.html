@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="lobby_styles.css">
+
+    <!-- 1. Carga la librería de Phaser 3 -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+    <!-- 2. **CRÍTICO:** Carga la librería de Supabase (Estaba faltando) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <style>
+    /* Importamos una fuente pixel art real */
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    /* Creamos una clase para "despertar" la fuente */
+    .font-loader {
+        font-family: 'Press Start 2P';
+        position: absolute;
+        visibility: hidden;
+    }
+    </style>
+
+
+    
+</head>
+
+
+
+<body>
+
+    <!-- Contenedor del juego -->
+    <div id="game-container"></div>
+    <div class="font-loader">.</div>
+
+    <script src="js/scenes/supabase_config.js"></script>
+    <script type="module" src="js/main.js"></script>
+    
+
+</body>
+</html>
