@@ -76,7 +76,7 @@ body {
 
 /* Contenedor del juego (para control de tamaño) */
 #game-container {
-    width: 110vw; /* Usa 90% del ancho del viewport */
+    width: 95vw; /* Usa 90% del ancho del viewport */
     max-width: 1200px; /* Límite en desktop */
     /* Mantiene una relación de aspecto 16:9, crucial para juegos */
     aspect-ratio: 16 / 9; 
@@ -94,3 +94,20 @@ canvas {
 
 }
 
+/* --- AJUSTES PARA MÓVIL HORIZONTAL --- */
+@media (orientation: landscape) and (max-height: 500px) {
+    .main-container {
+        flex-direction: row; /* UI al lado o simplemente oculta */
+        gap: 10px;
+    }
+
+    .lobby-ui {
+        display: none; /* Recomendado: ocultar UI externa para dar espacio al juego */
+    }
+
+    #game-container {
+        width: auto;
+        height: 95vh; /* El juego manda sobre el alto en landscape */
+        margin-top: 0;
+    }
+}
