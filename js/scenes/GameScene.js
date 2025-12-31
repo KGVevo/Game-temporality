@@ -19,51 +19,56 @@ export default class GameScene extends Phaser.Scene {
     
     
     preload() {
-        this.load.setBaseURL(window.location.origin + window.location.pathname);
-        
+    preload() {
+        // 1. Quitamos el setBaseURL problemático y usamos la ruta del index.html como base
+        this.load.setPath('./'); 
+
+        // 2. RUTAS CORREGIDAS: Eliminamos el "../" porque ahora partimos desde la raíz del proyecto
         // Mundo
-        this.load.image('mapa_juego', '../assets/mapa_juego.png');
-        this.load.image('arbol_navidad', '../assets/arbol_navidad.png');
-        this.load.spritesheet('atril_madera', '../assets/atril.png', { frameWidth: 200, frameHeight: 200 });
-        this.load.image('lampara01', '../assets/lampara01.png');
+        this.load.image('mapa_juego', 'assets/mapa_juego.png');
+        this.load.image('arbol_navidad', 'assets/arbol_navidad.png');
+        this.load.spritesheet('atril_madera', 'assets/atril.png', { frameWidth: 200, frameHeight: 200 });
+        this.load.image('lampara01', 'assets/lampara01.png');
 
         // UI
-        this.load.image('hotbar_sprite', '../assets/tu_sprite_hotbar.png');
-        this.load.image('desc_box', '../assets/tu_caja_descripcion.png');
-        this.load.image('carta_abierta', '../assets/carta_abierta.png');
-        this.load.image('text_option','../assets/text_option.png');
+        this.load.image('hotbar_sprite', 'assets/tu_sprite_hotbar.png');
+        this.load.image('desc_box', 'assets/tu_caja_descripcion.png');
+        this.load.image('carta_abierta', 'assets/carta_abierta.png');
+        this.load.image('text_option','assets/text_option.png');
         
         // Telefono Buttons
-        this.load.image('joy_base', '../assets/base.png');
-        this.load.image('joy_stick', '../assets/stick.png');
-        this.load.image('button_A', '../assets/button_A.png');
-        this.load.image('button_B', '../assets/button_B.png');
-        this.load.image('button_Y', '../assets/button_Y.png');
+        this.load.image('joy_base', 'assets/base.png');
+        this.load.image('joy_stick', 'assets/stick.png');
+        this.load.image('button_A', 'assets/button_A.png');
+        this.load.image('button_B', 'assets/button_B.png');
+        this.load.image('button_Y', 'assets/button_Y.png');
 
         // Items
-        this.load.image('item_carta', '../assets/item_carta.png'); 
-        this.load.image('pocion_textura', '../assets/pocion.png');
-        
+        this.load.image('item_carta', 'assets/item_carta.png'); 
+        this.load.image('pocion_textura', 'assets/pocion.png');
         
         // Datos y Audio
-        this.load.json('descripciones', '../texts/descripciones.json');
-        this.load.json('textos_juego', '../texts/dialogos.json');
-        this.load.bitmapFont('pixelFont', '../lol.png', '../lol.xml');
-
+        this.load.json('descripciones', 'texts/descripciones.json');
+        this.load.json('textos_juego', 'texts/dialogos.json');
+        this.load.bitmapFont('pixelFont', 'lol.png', 'lol.xml');
 
         // Entidades
-        this.load.spritesheet('player', '../assets/player.png', { frameWidth: 70, frameHeight: 70 });
-        this.load.spritesheet('cat_chanchi', '../assets/cat_chanchi.png', { frameWidth: 32, frameHeight: 32 });
+        this.load.spritesheet('player', 'assets/player.png', { frameWidth: 70, frameHeight: 70 });
+        this.load.spritesheet('cat_chanchi', 'assets/cat_chanchi.png', { frameWidth: 32, frameHeight: 32 });
 
         // Sonidos y Musica
-        this.load.audio('item_pickup', '../assets/sounds/pickup.mp3');
-        this.load.audio('page_flip', '../assets/sounds/page-flip.mp3');
-        this.load.audio('text_beep', '../assets/sounds/text_beep.mp3');
-        this.load.audio('cat_meow', '../assets/sounds/cat_meow.mp3');
-        this.load.audio('thema_1', '../assets/sounds/thema_1.mp3');
-    }   
-    
+        this.load.audio('item_pickup', 'assets/sounds/pickup.mp3');
+        this.load.audio('page_flip', 'assets/sounds/page-flip.mp3');
+        this.load.audio('text_beep', 'assets/sounds/text_beep.mp3');
+        this.load.audio('cat_meow', 'assets/sounds/cat_meow.mp3');
+        this.load.audio('thema_1', 'assets/sounds/thema_1.mp3');
 
+        // Debugger para ver si algún archivo sigue fallando
+        this.load.on('loaderror', (file) => {
+            console.error('Error cargando:', file.key, 'en la ruta:', file.src);
+        });
+    }
+        
     create() {
             // Creamos la instancia de la música
         this.bgMusic = this.sound.add('thema_1', { 
@@ -789,5 +794,6 @@ update() {
 
 
 }
+
 
 
