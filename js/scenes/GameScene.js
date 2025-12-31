@@ -52,7 +52,7 @@ export default class GameScene extends Phaser.Scene {
         this.load.bitmapFont('pixelFont', 'lol.png', 'lol.xml');
 
         // Entidades
-        this.load.spritesheet('player', 'assets/player.png', { frameWidth: 70, frameHeight: 70 });
+        this.load.spritesheet('player', 'assets/Player.png', { frameWidth: 70, frameHeight: 70 });
         this.load.spritesheet('cat_chanchi', 'assets/cat_chanchi.png', { frameWidth: 32, frameHeight: 32 });
 
         // Sonidos y Musica
@@ -793,6 +793,7 @@ update() {
 
 
 }
+
 
 
 
