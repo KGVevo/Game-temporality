@@ -1,6 +1,7 @@
-import MenuScene from './scenes/MenuScene.js';
-import GameScene from './scenes/GameScene.js';
-import InventoryScene from './scenes/InventoryScene.js';
+
+import MenuScene from 'scenes/MenuScene.js';
+import GameScene from 'scenes/GameScene.js';
+import InventoryScene from 'scenes/InventoryScene.js';
 
 const config = {
     type: Phaser.AUTO,
@@ -31,5 +32,6 @@ const config = {
     
     
 };
+
 
 new Phaser.Game(config);
