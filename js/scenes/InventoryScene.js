@@ -4,11 +4,11 @@ export default class InventoryScene extends Phaser.Scene{
     }
 
     preload() {
-        this.load.setBaseURL(window.location.origin + window.location.pathname);
+        this.load.setPath('./');
         
-        this.load.image('button_Y', '../assets/button_Y.png');
-        this.load.spritesheet('inventario_fondo', '../assets/inventario_fondo.png', { frameWidth: 368, frameHeight: 292 });
-        this.load.spritesheet('slot', '../assets/slot_spritesheet.png', { frameWidth: 64, frameHeight: 64 });
+        this.load.image('button_Y', 'assets/button_Y.png');
+        this.load.spritesheet('inventario_fondo', 'assets/inventario_fondo.png', { frameWidth: 368, frameHeight: 292 });
+        this.load.spritesheet('slot', 'assets/slot_spritesheet.png', { frameWidth: 64, frameHeight: 64 });
     }
 
     create() {
@@ -187,3 +187,4 @@ export default class InventoryScene extends Phaser.Scene{
     }
 
 }
+
