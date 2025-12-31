@@ -19,9 +19,8 @@ export default class GameScene extends Phaser.Scene {
     
     
     preload() {
-        this.load.path = './assents/';
-        this.load.path = './texts/';
-        this.load.path = './js/';
+        this.load.path = './game/';
+        
         // Mundo
         this.load.image('mapa_juego', '../assets/mapa_juego.png');
         this.load.image('arbol_navidad', '../assets/arbol_navidad.png');
