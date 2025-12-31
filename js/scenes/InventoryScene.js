@@ -4,7 +4,7 @@ export default class InventoryScene extends Phaser.Scene{
     }
 
     preload() {
-        this.load.path = './game/';
+        this.load.setBaseURL(window.location.origin + window.location.pathname);
         
         this.load.image('button_Y', '../assets/button_Y.png');
         this.load.spritesheet('inventario_fondo', '../assets/inventario_fondo.png', { frameWidth: 368, frameHeight: 292 });
@@ -185,4 +185,5 @@ export default class InventoryScene extends Phaser.Scene{
         this.scene.resume('GameScene');
         this.scene.stop();
     }
+
 }
